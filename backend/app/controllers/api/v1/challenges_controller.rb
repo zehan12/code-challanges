@@ -1,9 +1,11 @@
 module Api
     module V1
-        class Challenges
-
+        class ChallengesController < ApplicationController
+            # GET api/v1/challenges
             def index
                 # show all challenges
+                @challenges = Challenge.all
+                render json: @challenges
             end
 
             def create
